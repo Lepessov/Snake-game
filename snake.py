@@ -28,6 +28,14 @@ class Snake():
             snake_body.goto(position)
             self.snake_bodies.append(snake_body)
 
+    def reset(self):
+        for sb in self.snake_bodies:
+            sb.goto(1000, 1000)
+        self.snake_bodies.clear()
+        self.create_snake()
+        self.head = self.snake_bodies[0]
+
+
     def extend(self):
         tail = self.snake_bodies[-1]
         snake_body = Turtle()
